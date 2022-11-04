@@ -1,0 +1,105 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/prop-types": 1,
+        "semi": [
+            "warn",
+            "never"
+        ],
+        "no-const-assign": "error",
+        "no-console": "warn",
+        "no-var": "error",
+        "import/no-unresolved": "off",
+        "react/react-in-jsx-scope": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-props-no-spreading": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "react/forbid-prop-types": "off",
+        "no-undef": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
+            }
+        ],
+        "max-lines": [
+            "error",
+            {
+                "max": 250,
+                "skipComments": true
+            }
+        ],
+        "no-param-reassign": [
+            "warn",
+            {
+                "props": false
+            }
+        ],
+        
+        "camelcase": 0,
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "variables": false
+            }
+        ],
+        "no-return-await": 0,
+        "no-unused-vars": "warn",
+        "import/no-named-as-default": 0,
+        "import/named": 0,
+        "no-alert": 0
+    },
+    "settings": {
+        "react": {
+          "createClass": "createReactClass",
+                                            
+          "pragma": "React",
+          "fragment": "Fragment",
+          "version": "detect", 
+          "flowVersion": "0.53" 
+        },
+        "propWrapperFunctions": [
+            
+            "forbidExtraProps",
+            {"property": "freeze", "object": "Object"},
+            {"property": "myFavoriteWrapper"},
+            
+            {"property": "forbidExtraProps", "exact": true}
+        ],
+        "componentWrapperFunctions": [
+            
+            "observer",
+            {"property": "styled"},
+            {"property": "observer", "object": "Mobx"},
+            {"property": "observer", "object": "<pragma>"}
+        ],
+        "formComponents": [
+          "CustomForm",
+          {"name": "Form", "formAttribute": "endpoint"}
+        ],
+        "linkComponents": [
+          "Hyperlink",
+          {"name": "Link", "linkAttribute": "to"}
+        ]
+      }
+}
