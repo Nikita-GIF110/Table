@@ -1,0 +1,8 @@
+.row {
+    display: grid;
+}
+
+.cell {
+    flex-grow: 1;
+    padding: 5px;
+}

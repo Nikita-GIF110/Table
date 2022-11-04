@@ -4,8 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "airbnb"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -54,7 +54,22 @@
                 "props": false
             }
         ],
-        
+        "import/extensions": [
+            "warn",
+            "never",
+            {
+                "ignorePackages": false,
+                "pattern": {
+                    "js": "never",
+                    "jsx": "never",
+                    "json": "never",
+                    "ts": "never",
+                    "tsx": "never",
+                    "css": "always",
+                    "png": "always"
+                }
+            }
+        ],
         "camelcase": 0,
         "no-use-before-define": [
             "error",
@@ -68,38 +83,5 @@
         "import/no-named-as-default": 0,
         "import/named": 0,
         "no-alert": 0
-    },
-    "settings": {
-        "react": {
-          "createClass": "createReactClass",
-                                            
-          "pragma": "React",
-          "fragment": "Fragment",
-          "version": "detect", 
-          "flowVersion": "0.53" 
-        },
-        "propWrapperFunctions": [
-            
-            "forbidExtraProps",
-            {"property": "freeze", "object": "Object"},
-            {"property": "myFavoriteWrapper"},
-            
-            {"property": "forbidExtraProps", "exact": true}
-        ],
-        "componentWrapperFunctions": [
-            
-            "observer",
-            {"property": "styled"},
-            {"property": "observer", "object": "Mobx"},
-            {"property": "observer", "object": "<pragma>"}
-        ],
-        "formComponents": [
-          "CustomForm",
-          {"name": "Form", "formAttribute": "endpoint"}
-        ],
-        "linkComponents": [
-          "Hyperlink",
-          {"name": "Link", "linkAttribute": "to"}
-        ]
-      }
+    }
 }
