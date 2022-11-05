@@ -11,9 +11,20 @@ export const Table = ({ columns, items }) => {
 
   const generateArrayRow = () => {
     const headerTemplate = columns.map(({ dataField }) => dataField)
-    items.forEach((row) => {
-      const dd = headerTemplate.findIndex((field) => field)
-    })
+    const rowsTemplate = []
+
+    for (let i = 0; i < items.length; i += 1) {
+      const item = items[i]
+      const itemTemplate = []
+
+      Object.entries(item).map(([key, value]) => {
+        const fieldIndex = headerTemplate.findIndex((field) => field === key)
+        itemTemplate[fieldIndex] = { [key]: value }
+        return itemTemplate
+      })
+      rowsTemplate.push(itemTemplate)
+    }
+    setRows(rowsTemplate)
   }
 
   useEffect(() => {

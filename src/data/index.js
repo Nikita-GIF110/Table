@@ -1,17 +1,17 @@
 export const data = [
   {
-    film: 'Tenet',
     releaseDate: 2020,
+    film: 'Tenet',
     rating: 4.3,
   },
   {
-    film: 'interstellar',
     releaseDate: 2014,
+    film: 'interstellar',
     rating: 4.5,
   },
   {
-    film: 'inception',
     releaseDate: 2010,
+    film: 'inception',
     rating: 4.8,
   },
 ]
