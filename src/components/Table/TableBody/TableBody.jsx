@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { TableRow } from './TableRow'
 
-import styles from './TableBody.module.css'
+import styles from './TableBody.module.scss'
 
 export const TableBody = ({ rows, count }) => (
   <div className={styles.body}>

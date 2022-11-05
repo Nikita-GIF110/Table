@@ -1,0 +1,17 @@
+.row {
+    display: grid;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.075);
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+.cell {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    flex-grow: 1;
+    padding: 10px;
+}

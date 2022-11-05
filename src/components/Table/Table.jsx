@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { TableHead } from './TableHead'
 import { TableBody } from './TableBody'
 
-import styles from './Table.module.css'
+import styles from './Table.module.scss'
 
 export const Table = ({ columns, items }) => {
+  const tableRef = useRef()
+
   const [count, setCount] = useState(1)
   const [rows, setRows] = useState([])
 
@@ -33,7 +35,10 @@ export const Table = ({ columns, items }) => {
   }, [columns])
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      ref={tableRef}
+      className={styles.table}
+    >
       <TableHead columns={columns} count={count} />
       <TableBody rows={rows} count={count} />
     </div>

@@ -65,7 +65,7 @@
                     "json": "never",
                     "ts": "never",
                     "tsx": "never",
-                    "css": "always",
+                    "scss": "always",
                     "png": "always"
                 }
             }

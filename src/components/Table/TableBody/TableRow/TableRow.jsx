@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './TableRow.module.css'
+import styles from './TableRow.module.scss'
 
 const Cell = ({ cell }) => {
   const [, value] = cell
@@ -14,7 +14,7 @@ Cell.defaultProps = { cell: [] }
 
 export const TableRow = ({ row, count }) => {
   const rowStyles = {
-    gridTemplateColumns: `repeat(${count}, 1fr)`,
+    gridTemplateColumns: `repeat(${count}, minmax(100px, 1fr))`,
   }
 
   return (
