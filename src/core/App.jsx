@@ -1,5 +1,5 @@
 import { Table } from 'components'
-import { data } from 'data'
+import { data, pagination } from 'data'
 
 const App = () => {
   const columns = [
@@ -21,6 +21,7 @@ const App = () => {
       <Table
         columns={columns}
         items={data}
+        pagination={pagination}
       />
     </div>
   )

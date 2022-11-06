@@ -1,0 +1,18 @@
+@mixin action-button-style {
+    border-color: $table-border-color !important;
+    color: $text-primary !important;
+    background-color: $table-bg-color !important;
+    transition: background-color 0.3s linear;
+
+    &:hover {
+        background-color: $button-active-bg !important;
+        color: $white !important;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+        background-color: $button-active-bg !important;
+        color: $white !important;
+    }
+}

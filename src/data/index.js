@@ -42,3 +42,9 @@ export const data = [
     test5: 'row-3-test5',
   },
 ]
+export const pagination = {
+  page: 1,
+  per_page: 50,
+  pages: 245,
+  total: 245,
+}

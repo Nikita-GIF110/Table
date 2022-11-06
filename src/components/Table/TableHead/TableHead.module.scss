@@ -1,15 +1,14 @@
 @import "style/utils/includes.scss";
 
 .header {
-    display: flex;
+    display: grid;
     border-bottom: 1px solid $table-border-color;
     background-color: $table-bg-color;
+    min-width: 100%;
 }
 
 .cell {
     display: inline-flex;
     align-items: center;
-    flex: 1 1 auto;
-    min-width: 100px;
     padding: 8px 10px;
 }

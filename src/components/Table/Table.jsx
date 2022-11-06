@@ -2,11 +2,17 @@ import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { TableHead } from './TableHead'
 import { TableBody } from './TableBody'
+import { TablePagination } from './TablePagination'
 
 import styles from './Table.module.scss'
 
-export const Table = ({ columns, items }) => {
-  const tableRef = useRef()
+export const Table = ({
+  columns,
+  items,
+  pagination,
+  sizePagesList,
+}) => {
+  const tableRef = useRef(null)
 
   const [count, setCount] = useState(1)
   const [rows, setRows] = useState([])
@@ -29,26 +35,66 @@ export const Table = ({ columns, items }) => {
     setRows(rowsTemplate)
   }
 
+  const onWheel = () => {
+    // const elem = tableRef.current
+    // console.log()
+    // event.preventDefault()
+    // elem.scrollTo({
+    //   left: elem.scrollLeft + event.deltaY * 4,
+    //   behavior: 'smooth',
+    // })
+  }
+
+  const onTableChange = () => { }
+
   useEffect(() => {
     setCount(columns.length)
     generateArrayRow()
   }, [columns])
 
+  useEffect(() => {
+    const scrollElem = tableRef.current
+    if (scrollElem) {
+      scrollElem.addEventListener('wheel', onWheel)
+    }
+  })
+
   return (
-    <div
-      ref={tableRef}
-      className={styles.table}
-    >
-      <TableHead columns={columns} count={count} />
-      <TableBody rows={rows} count={count} />
+    <div className={styles.table}>
+      <div
+        ref={tableRef}
+        className={styles.content}
+      >
+        <TableHead columns={columns} count={count} />
+        <TableBody rows={rows} count={count} />
+      </div>
+      <TablePagination
+        pagination={pagination}
+        sizePagesList={sizePagesList}
+        callback={onTableChange}
+      />
     </div>
   )
 }
 Table.propTypes = {
   columns: PropTypes.array,
   items: PropTypes.array,
+  pagination: PropTypes.shape({
+    page: PropTypes.number,
+    per_page: PropTypes.number,
+    pages: PropTypes.number,
+    total: PropTypes.number,
+  }),
+  sizePagesList: PropTypes.array,
 }
 Table.defaultProps = {
   columns: [],
   items: [],
+  pagination: {
+    page: 1,
+    per_page: 50,
+    pages: 100,
+    total: 100,
+  },
+  sizePagesList: [50, 100, 200],
 }

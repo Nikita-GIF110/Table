@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types'
 import { TableRow } from './TableRow'
 
-import styles from './TableBody.module.scss'
-
 export const TableBody = ({ rows, count }) => (
-  <div className={styles.body}>
+  <div>
     {rows.map((row, index) => {
       const rowKey = `row-${index}`
       return <TableRow key={rowKey} row={row} count={count} />
